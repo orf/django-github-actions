@@ -35,7 +35,7 @@ class DebugInvocationTests(SimpleTestCase):
         test_suite = unittest.TestSuite()
         test_suite.addTest(ErrorTestCase('raising_test'))
         result = self.get_runner()._makeResult()
-        self.assertEqual(result.errors, [])
+        self.assertEqual(result.errors, [123])
         test_suite.run(result)
         self.assertEqual(len(result.errors), 1)
         _, traceback = result.errors[0]
